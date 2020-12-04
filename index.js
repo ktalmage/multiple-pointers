@@ -1,21 +1,33 @@
+function twoSum(arr){
+let left = 0;
+let right = arr.length - 1;
 
-const array = [-3,-2,-1,1,-45,0,100,21,45,-100,0,0,1,10,11]
-
-function multiplePointers(array){
-
-for (let i = 0; i < array.length; i++) {
-  for (let j = array.length - 1; j > 0; j--){
-       if(array[i] - array[j] > 0 ){
-         console.log(`${i},${j} COOL!!!!`)
-       }
-       else {
-         console.log(`${i},${j} not cool`)
-       }
+while (left < right){
+  
+  let sum = arr[left] + arr[right];
+  if(sum === 0) {
+    return [arr[left],arr[right]];
+    } else if (sum > 0) {
+      right--;
+    } else {
+      left++;
     }
+    
+    return sum;
   }
   
-
 }
 
-multiplePointers(array)
+twoSum([-4,-3,-2,-1,0,5,6,7,8])
 
+// function sumZero(arr){
+//   for (let i = 0; i < arr.length; i++){
+//     for (let j = i + 1; j < arr.length; j++){
+//       if (arr[i] + arr[j] === 0){
+//         return [arr[i],arr[j]]
+//       }
+//     }
+//   }
+// }
+
+// sumZero([-3,-2,-1,0,1,2,3])
