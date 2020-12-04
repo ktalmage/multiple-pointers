@@ -13,7 +13,7 @@ while (left < right){
       left++;
     }
     
-    return sum;
+    
   }
   
 }
